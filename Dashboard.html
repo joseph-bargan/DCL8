@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Dashboard</title>
+
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="main.css">
+
+
+</head>
+
+<body>
+
+
+
+    <header id="header" class="navbar bg-white fixed-top navbar-expand-lg top-nw-nav-header">
+
+        <div class="container-fluid">
+            <ul class="navbar-nav flex-row d-md-flex top-nw-nv-l">
+
+            </ul>
+            <ul class="navbar-nav right_nav top-nw-nav">
+                <li class="nav-item d-sm-flex d-md-flex d-lg-flex d-xl-flex">
+                    <a class="nav-link" onclick=SwitchMode()>
+                        <span class="menu-icon"><img
+                                src="https://d2qgo50yy98y8.cloudfront.net/public/front/img/explore.png" alt=""></span>
+                        <span class="d-none d-sm-none d-md-none d-lg-block d-xl-block">Switch View</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown d-sm-flex d-md-flex d-lg-flex d-xl-flex">
+                    <a class="nav-link dropdown-toggle" id="new_org_dashboard" href="#" data-toggle="dropdown"
+                        data-url="/"> <span class="menu-icon"><img
+                                src="https://d2qgo50yy98y8.cloudfront.net/public/front/img/web-browser.png" alt="create"
+                                width="80%" height="4px"></span> <span
+                            class="d-none d-sm-none d-md-none d-lg-block d-xl-block">My Dashboard </span> </a>
+                    <ul class="dropdown-menu firstmenu ">
+                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="/"> <span
+                                    class="menu-icon"><img
+                                        src="https://d2qgo50yy98y8.cloudfront.net/public/front/img/user.png"
+                                        alt="create"></span> User Dashboard </a></li>
+
+
+
+                    </ul>
+                </li>
+
+
+
+                <!--  -->
+
+                <li class="nav-item dropdown d-sm-flex d-md-flex d-lg-flex d-xl-flex">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> <span class="menu-icon"><img
+                                src="https://d2qgo50yy98y8.cloudfront.net/public/front/img/settings.png" alt=""
+                                width="80%" height="5px"></span><span
+                            class="d-none d-sm-none d-md-none d-lg-block d-xl-block"> Manage</span> </a>
+                    <ul class="dropdown-menu firstmenu last-mbl-right">
+                        <li><a class="dropdown-item" href="/"> <span class="menu-icon"><img
+                                        src="https://d2qgo50yy98y8.cloudfront.net/public/front/img/user.png"
+                                        alt="profile"></span> Profile </a></li>
+                    </ul>
+                </li>
+                <li class="nav-item searchbar">
+                    <div class="input-group" id="multiple-datasets">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><img alt="search"
+                                    src="https://d2qgo50yy98y8.cloudfront.net/public/front/img/search_icon.png"></span>
+                        </div>
+                        <input type="text" class="form-control typeahead" id="main_search" style="width:358px"
+                            placeholder="Search Bar">
+                    </div>
+                </li>
+                <li class="nav-item notification dropdown">
+                    <a href="/" class="nav-link user_details_drop dropdown-toggle" id="dropdownMenuButton" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="user_profile">
+                            <img alt=""
+                                src="/"
+                                onerror="this.onerror=null;this.src='https://d2qgo50yy98y8.cloudfront.net/public/front/img/default-user.png';"
+                                title="Joseph B">
+                        </span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right notifi_menu" aria-labelledby="dropdownMenuButton">
+                        <ul class="notifi_lst">
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+
+                                    <div class="menu-info">
+                                        <h4 style="font-size: 20px">Joseph B</h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+                                    <div class="menu-info">
+                                        <h4><i class="fas fa-user"></i> My Info</h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+                                    <div class="menu-info">
+                                        <h4><i class="fas fa-question-circle"></i> Help </h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+                                    <div class="menu-info">
+                                        <h4><i class="fas fa-envelope"></i> Inbox</h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+                                    <div class="menu-info">
+                                        <h4><i class="fas fa-newspaper"></i> Newsfeed </h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+                                    <div class="menu-info">
+                                        <h4><i class="fas fa-bell"></i>
+                                            Notifications 18
+                                        </h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+                                    <div class="menu-info">
+
+                                        <h4><i class="fas fa-cog"></i> Settings</h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+                                    <div class="menu-info">
+                                        <h4><i class="fas fa-sign-out-alt"></i> Log Out</h4>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </li>
+
+            </ul>
+        </div>
+    </header>
+
+    <section class="bg-alice-blue main_section home-dashboard" id="maindashboard">
+    <div class="loader-main-block">
+        <div class="j-loader">Prepr</div>
+    </div>
+    <div class="h-dashboard-innr">
+        <div class="container-fluid">
+            <div class="main-card">
+                <div class="col-md-12 p-0 pl-xl-3 pr-xl-3">
+                    <div class="row">
+                        <div class="col-xl-12 col-sm-12">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-4">
+                                    <div class="card cstm-card tab-card">
+                                        <div class="cardheader">
+                                            <a class="c-heading" href="/">Projects</a>
+                                            <a href="/">
+                                                <button class="btn btn-success btn-cstm waves-effect waves-light">Create</button>
+                                            </a>
+                                        </div>
+                                        <ul class="nav nav-tabs" id="projectsTab" role="tablist">
+                                            <li class="nav-item waves-effect waves-light">
+                                                <a class="nav-link active" id="uProjects-tab" data-toggle="tab"
+                                                    href="/" role="tab" aria-controls="uProjects"
+                                                    aria-selected="true">My Projects
+                                                </a>
+                                            </li>
+                                            <li class="nav-item waves-effect waves-light">
+                                                <a class="nav-link" id="uProjectsInvite-tab" data-toggle="tab"
+                                                    href="/" role="tab" aria-controls="uProjectsInvite"
+                                                    aria-selected="false">Invited
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                        <div class="add-usr-project-tab">
+                                            <div class="slimScrollDiv"
+                                                style="position: relative; overflow: hidden; width: auto; height: 300px;">
+                                                <div class="tab-content project-tab-scroll"
+                                                    style="overflow: hidden; width: auto; height: 300px;">
+                                                    <div class="tab-pane active" id="uProjects" role="tabpanel"
+                                                        aria-labelledby="uProjects-tab">
+                                                        <div class="accordion d-card-accordion"
+                                                            style="max-height: 300px;height: 300px;">
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="tab-pane" id="uProjectsInvite" role="tabpanel"
+                                                        aria-labelledby="submissions-tab">
+                                                        <div class="accordion d-card-accordion"
+                                                            style="max-height: 300px;height: 300px;">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="slimScrollBar"
+                                                    style="background: rgb(111, 192, 92) none repeat scroll 0% 0%; width: 2px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; height: 84.5865px;">
+                                                </div>
+                                                <div class="slimScrollRail"
+                                                    style="width: 2px; height: 100%; position: absolute; top: 0px; border-radius: 7px; background: rgb(206, 207, 208) none repeat scroll 0% 0%; opacity: 0.2; z-index: 90; right: 1px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-4">
+                                    <div class="card cstm-card tab-card">
+                                        <div class="cardheader">
+                                            <a class="c-heading"
+                                                href="/">Challenges</a>
+                                        </div>
+                                        <ul class="nav nav-tabs" id="challengesTab" role="tablist">
+                                            <li class="nav-item waves-effect waves-light">
+                                                <a class="nav-link active" id="uMyChallenges-tab" data-toggle="tab"
+                                                    href="/" role="tab" aria-controls="uMyChallenges"
+                                                    aria-selected="true">My Challenges
+                                                </a>
+                                            </li>
+                                            <li class="nav-item waves-effect waves-light">
+                                                <a class="nav-link" id="uChallengesInvite-tab" data-toggle="tab"
+                                                    href="/" role="tab"
+                                                    aria-controls="uChallengesInvite" aria-selected="false">Invited
+                                                </a>
+                                            </li>
+                                            <li class="nav-item waves-effect waves-light">
+                                                <a class="nav-link" id="uChallengesFollow-tab" data-toggle="tab"
+                                                    href="/" role="tab"
+                                                    aria-controls="uChallengesFollow" aria-selected="false">Following
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="add-usr-project-tab">
+                                            <div class="slimScrollDiv"
+                                                style="position: relative; overflow: hidden; width: auto; height: 300px;">
+                                                <div class="tab-content project-tab-scroll"
+                                                    style="overflow: hidden; width: auto; height: 300px;">
+                                                    <div class="tab-pane active" id="uMyChallenges" role="tabpanel"
+                                                        aria-labelledby="uMyChallenges-tab">
+                                                        <div class="accordion d-card-accordion">
+                                                        </div>
+                                                    </div>
+
+                                                    <!--Start of module for users invite created my challenges listing of following Challenges  -->
+
+                                                    <div class="tab-pane" id="uChallengesFollow" role="tabpanel"
+                                                        aria-labelledby="uChallengesFollow-tab">
+                                                        <div class="accordion d-card-accordion">
+                                                        </div>
+                                                    </div>
+
+                                                    <!--End of module for users invite created my challenges listing of following Challenges  -->
+
+                                                    <div class="tab-pane" id="uChallengesInvite" role="tabpanel"
+                                                        aria-labelledby="submissions-tab">
+                                                        <div class="accordion d-card-accordion">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="slimScrollBar"
+                                                    style="background: rgb(111, 192, 92) none repeat scroll 0% 0%; width: 2px; position: absolute; top: 131px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 169.173px;">
+                                                </div>
+                                                <div class="slimScrollRail"
+                                                    style="width: 2px; height: 100%; position: absolute; top: 0px; border-radius: 7px; background: rgb(206, 207, 208) none repeat scroll 0% 0%; opacity: 0.2; z-index: 90; right: 1px; display: none;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-4">
+                                    <div class="card cstm-card tab-card">
+                                        <div class="cardheader">
+                                            <a class="c-heading" href="/">Labs</a>
+                                        </div>
+                                        <ul class="nav nav-tabs" id="LabsTab" role="tablist">
+                                            <li class="nav-item waves-effect waves-light">
+                                                <a class="nav-link active" id="needtoaccss-tab" data-toggle="tab"
+                                                    href="/" role="tab" aria-controls="needtoaccss"
+                                                    aria-selected="true">My Labs
+                                                </a>
+                                            </li>
+                                            <li class="nav-item waves-effect waves-light">
+                                                <a class="nav-link" id="submissions-tab" data-toggle="tab"
+                                                    href="/" role="tab" aria-controls="submissions"
+                                                    aria-selected="false">Invited
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="add-usr-project-tab">
+                                            <div class="slimScrollDiv"
+                                                style="position: relative; overflow: hidden; width: auto; height: 300px;">
+                                                <div class="tab-content project-tab-scroll"
+                                                    style="overflow: hidden; width: auto; height: 300px;">
+                                                    <div class="tab-pane active" id="needtoaccss" role="tabpanel"
+                                                        aria-labelledby="needtoaccss-tab">
+                                                        <div class="accordion d-card-accordion">
+                                                            <div class="card">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="tab-pane" id="submissions" role="tabpanel"
+                                                        aria-labelledby="submissions-tab">
+                                                        <div class="accordion d-card-accordion">
+                                                            <div class="card">
+                                                                <div class="card-body d-card-body">
+                                                                    <b>
+                                                                    </b>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="slimScrollBar"
+                                                    style="background: rgb(111, 192, 92) none repeat scroll 0% 0%; width: 2px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 300px;">
+                                                </div>
+                                                <div class="slimScrollRail"
+                                                    style="width: 2px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(206, 207, 208) none repeat scroll 0% 0%; opacity: 0.2; z-index: 90; right: 1px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-4">
+                                    <div class="myinbox-card">
+                                        <div class="card cstm-card tab-card">
+                                            <div class="cardheader">
+                                                <a class="c-heading" href="/">My Inbox</a>
+                                            </div>
+                                            <ul class="nav nav-tabs" id="projectsTab" role="tablist">
+                                                <li class="nav-item waves-effect waves-light">
+                                                    <a class="nav-link active" id="mychat-tab" data-toggle="tab"
+                                                        href="/" role="tab" aria-controls="mychat"
+                                                        aria-selected="true">My Chats
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item waves-effect waves-light">
+                                                    <a class="nav-link" id="frndreqst-tab" data-toggle="tab"
+                                                        href="/" role="tab" aria-controls="frndreqst"
+                                                        aria-selected="false">Friend Requests
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div class="card-innr-list add-usr-project-tab">
+                                                <div class="slimScrollDiv"
+                                                    style="position: relative; overflow: hidden; width: auto; height: 300px;">
+                                                    <div class="tab-content mailscroll"
+                                                        style="overflow: hidden; width: auto; height: 300px;">
+                                                        <div class="tab-pane active" id="mychat" role="tabpanel"
+                                                            aria-labelledby="mychat-tab">
+                                                            <div class="">
+                                                                <b>
+                                                                </b>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tab-pane" id="frndreqst" role="tabpanel"
+                                                            aria-labelledby="frndreqst-tab">
+                                                        </div>
+                                                    </div>
+                                                    <div class="slimScrollBar"
+                                                        style="background: rgb(111, 192, 92) none repeat scroll 0% 0%; width: 2px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 300px;">
+                                                    </div>
+                                                    <div class="slimScrollRail"
+                                                        style="width: 2px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(206, 207, 208) none repeat scroll 0% 0%; opacity: 0.2; z-index: 90; right: 1px;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-4">
+                                    <div class="myorganigation-card">
+                                        <div class="card cstm-card tab-card">
+                                            <div class="cardheader">
+                                                <div class="c-heading text-gray-shade-11">Recommendations </div>
+                                            </div>
+                                            <ul class="nav nav-tabs" id="recomdationTab" role="tablist">
+                                                <li class="nav-item waves-effect waves-light">
+                                                    <a class="nav-link active" id="recomdationLab-tab" data-toggle="tab"
+                                                        href="/" role="tab" aria-controls="rescomdationLab"
+                                                        aria-selected="true"> Labs </a>
+                                                </li>
+                                                <li class="nav-item waves-effect waves-light">
+                                                    <a class="nav-link" id="recomdationChallenges-tab" data-toggle="tab"
+                                                        href="/" role="tab"
+                                                        aria-controls="recomdationChallenges"
+                                                        aria-selected="false">Challenges </a>
+                                                </li>
+                                                <li class="nav-item waves-effect waves-light">
+                                                    <a class="nav-link" id="recomdationResources-tab" data-toggle="tab"
+                                                        href="/" role="tab"
+                                                        aria-controls="recomdationResources"
+                                                        aria-selected="false">Resources </a>
+                                                </li>
+                                            </ul>
+                                            <div class="add-usr-project-tab">
+                                                <div class="slimScrollDiv"
+                                                    style="position: relative; overflow: hidden; width: auto; height: 300px;">
+                                                    <div class="tab-content project-tab-scroll"
+                                                        style="overflow: hidden; width: auto; height: 300px;">
+
+                                                        <div class="tab-pane active" id="recomdationLab" role="tabpanel"
+                                                            aria-labelledby="recomdationLab-tab">
+                                                            <div class="accordion d-card-accordion">
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="tab-pane" id="recomdationChallenges" role="tabpanel"
+                                                            aria-labelledby="recomdationChallenges-tab">
+                                                            <div class="accordion d-card-accordion">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="tab-pane" id="recomdationResources" role="tabpanel"
+                                                            aria-labelledby="recomdationResources-tab">
+                                                            <div class="accordion d-card-accordion">
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="slimScrollBar"
+                                                        style="background: rgb(111, 192, 92) none repeat scroll 0% 0%; width: 2px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 300px;">
+                                                    </div>
+                                                    <div class="slimScrollRail"
+                                                        style="width: 2px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(206, 207, 208) none repeat scroll 0% 0%; opacity: 0.2; z-index: 90; right: 1px;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                </div>
+                                <div class="col-xl-9 col-md-8">
+                                    <div class="myorganigation-card discussion-card">
+                                        <div class="card cstm-card tab-card">
+                                            <div class="cardheader">
+                                                <div class="c-heading text-gray-shade-11">Discussions</div>
+                                            </div>
+                                            <ul class="nav nav-tabs" id="recomdationTab" role="tablist">
+                                                <li class="nav-item waves-effect waves-light">
+                                                    <a class="nav-link active" id="discutionsProject-tab"
+                                                        data-toggle="tab" href="/" role="tab"
+                                                        aria-controls="discutionsProject" aria-selected="true"> Projects
+                                                    
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item waves-effect waves-light">
+                                                    <a class="nav-link" id="discutionsChallenges-tab" data-toggle="tab"
+                                                        href="/" role="tab"
+                                                        aria-controls="discutionsChallenges"
+                                                        aria-selected="false">Challenges
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item waves-effect waves-light">
+                                                    <a class="nav-link" id="discutionsLabs-tab" data-toggle="tab"
+                                                        href="/" role="tab" aria-controls="discutionsLabs"
+                                                        aria-selected="false">Labs
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div class="add-usr-project-tab ">
+                                                <div class="slimScrollDiv"
+                                                    style="position: relative; overflow: hidden; width: auto; height: 300px;">
+                                                    <div class="tab-content project-tab-scroll"
+                                                        style="overflow: hidden; width: auto; height: 300px;">
+                                                        <div class="tab-pane active" id="discutionsProject"
+                                                            role="tabpanel" aria-labelledby="discutionsProject-tab">
+                                                            <div class="accordion d-card-accordion">
+                                                                <div class="card">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="tab-pane" id="discutionsChallenges" role="tabpanel"
+                                                            aria-labelledby="discutionsChallenges-tab">
+                                                            <div class="accordion d-card-accordion">
+                                                                <div class="card">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="tab-pane" id="discutionsLabs" role="tabpanel"
+                                                            aria-labelledby="discutionsLabs-tab">
+                                                            <div class="accordion d-card-accordion">
+                                                                <div class="card">
+                                                                </div>
+                                                            </div>
+
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="slimScrollBar"
+                                                        style="background: rgb(111, 192, 92) none repeat scroll 0% 0%; width: 2px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 206.897px;">
+                                                    </div>
+                                                    <div class="slimScrollRail"
+                                                        style="width: 2px; height: 100%; position: absolute; top: 0px; border-radius: 7px; background: rgb(206, 207, 208) none repeat scroll 0% 0%; opacity: 0.2; z-index: 90; right: 1px; display: none;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                            
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </section>
+
+    <script>
+
+        var x = 0;
+
+        function SwitchMode() {
+
+            if (x == 0) {
+
+                x = 1;
+
+                var bgc1 = document.getElementsByClassName("bg-white")
+                for (var i = 0, len = bgc1.length | 0; i < len; i = i + 1 | 0) {
+                    bgc1[i].style.backgroundColor = "#2F4F4F";
+                }
+
+                var bgc2 = document.getElementsByClassName("bg-alice-blue")
+                for (var i = 0, len = bgc2.length | 0; i < len; i = i + 1 | 0) {
+                    bgc2[i].style.backgroundColor = "#000";
+                }
+
+
+                var title1 = document.getElementsByClassName("card-title")
+                for (var i = 0, len = title1.length | 0; i < len; i = i + 1 | 0) {
+                    title1[i].style.color = "#27ae60";
+                }
+            }
+            else {
+
+                x = 0;
+
+                var bgc1 = document.getElementsByClassName("bg-white")
+                for (var i = 0, len = bgc1.length | 0; i < len; i = i + 1 | 0) {
+                    bgc1[i].style.backgroundColor = "#fff";
+                }
+
+                var bgc2 = document.getElementsByClassName("bg-alice-blue")
+                for (var i = 0, len = bgc2.length | 0; i < len; i = i + 1 | 0) {
+                    bgc2[i].style.backgroundColor = "#fff";
+                }
+
+
+                var title1 = document.getElementsByClassName("card-title")
+                for (var i = 0, len = title1.length | 0; i < len; i = i + 1 | 0) {
+                    title1[i].style.color = "#000";
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
